@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="./styles.css">
+        <script src="./jquery.js"></script>
+        <title>JIMAS (Jimpitan Masyarakat)</title>
+        <style>
+            *::-webkit-scrollbar{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="w-full h-dvh flex flex-col items-center bg-white">
+            <div class="md:w-96 h-full w-full overflow-hidden flex">
+
+                <!-- LOADER -->
+                <div class="w-full h-full hidden opacity-0 transition flex-col items-center justify-center px-6 bg-white" id="loader">
+                    <div class="flex flex-col items-center justify-center gap-4">
+                        <img src="./assets/logo.png" alt="JIMAS" class="w-48 h-48 aspect-square object-contain object-center">
+                        <p class="font-semibold text-teal-base">JIMPITAN MASYARAKAT</p>
+                    </div>
+                    <p class="text-sm absolute bottom-10">Versi 1.0</p>
+                </div>
+    
+                <!-- LOGIN -->
+                <div class="w-full h-full hidden opacity-0 transition flex-col items-center justify-center px-6 bg-white pages" id="login">
+                    <div class="flex flex-col gap-4 w-full">
+                        <div class="flex flex-row items-center justify-between text-teal-base w-full mb-4">
+                            <h1 class="font-bold text-3xl">Masuk</h1>
+                            <a href="#" class="fas fa-circle-question text-2xl h-max"></a>
+                        </div>
+                        <div class="w-full flex flex-col gap-6 mt-4">
+                            <div class="flex flex-col gap-2">
+                                <label for="email" class="text-neutral-700">Alamat email</label>
+                                <input type="email" id="email" placeholder="Masukkan alamat email anda" class="w-full h-12 px-4 rounded-md bg-neutral-100 outline-none ring-1 ring-neutral-300">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="password" class="text-neutral-700">Kata sandi</label>
+                                <input type="password" id="password" placeholder="Masukkan kata sandi anda" class="w-full h-12 px-4 rounded-md bg-neutral-100 outline-none ring-1 ring-neutral-300">
+                            </div>
+                            <a href="#login" class="text-teal-base text-sm text-left hover:underline transition">Lupa kata sandi?</a>
+                            <a href="#dashboard" class="h-12 text-white bg-teal-base transition hover:opacity-90 rounded-md mt-4 grid place-items-center redirect">Masuk</a>
+                        </div>
+                        <div class="flex flex-col gap-6 mt-6">
+                            <div class="flex flex-row items-center gap-4 justify-center"><hr class="border-neutral-500 border-[1px] border-solid w-10"><span>atau</span><hr class="border-neutral-500 border-[1px] border-solid w-10"></div>
+                            <p class="text-center">Masuk dengan</p>
+                            <div class="flex flex-row items-center justify-center gap-10 my-4">
+                                <a href="#" class="flex flex-col gap-2 items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-teal-base transition hover:opacity-90 text-white fas fa-phone grid place-items-center"></div>
+                                    <p class="text-sm">Telepon</p>
+                                </a>
+                                <a href="#" class="flex flex-col gap-2 items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-teal-base transition hover:opacity-90 text-white fas fa-envelope grid place-items-center"></div>
+                                    <p class="text-sm">Email</p>
+                                </a>
+                                <a href="#" class="flex flex-col gap-2 items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-teal-base transition hover:opacity-90 text-white fas fa-ellipsis grid place-items-center"></div>
+                                    <p class="text-sm">Lainnya</p>
+                                </a>
+                            </div>
+                            <div class="text-center text-sm"><span>Belum punya akun? </span><a href="#register" class="text-teal-base hover:underline redirect">Daftar</a></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- DAFTAR -->
+                <div class="w-full h-full hidden opacity-0 transition flex-col items-center justify-center px-6 bg-white pages" id="register">
+                    <div class="flex flex-col gap-4 w-full">
+                        <div class="flex flex-row items-center justify-between text-teal-base w-full mb-4">
+                            <h1 class="font-bold text-3xl">Daftar</h1>
+                            <a href="#" class="fas fa-circle-question text-2xl h-max"></a>
+                        </div>
+                        <form class="w-full flex flex-col gap-4 mt-4">
+                            <div class="flex flex-col gap-2 mb-4">
+                                <label for="name" class="text-neutral-700">Nama lengkap</label>
+                                <input type="text" id="name" placeholder="Masukkan nama lengkap anda" class="w-full h-12 px-4 rounded-md bg-neutral-100 outline-none ring-1 ring-neutral-300">
+                            </div>
+                            <div class="flex flex-col gap-2 mb-4">
+                                <label for="email" class="text-neutral-700">Alamat email</label>
+                                <input type="email" id="email" placeholder="Masukkan alamat email anda" class="w-full h-12 px-4 rounded-md bg-neutral-100 outline-none ring-1 ring-neutral-300">
+                            </div>
+                            <div class="flex flex-col gap-2 mb-4">
+                                <label for="password" class="text-neutral-700">Kata sandi</label>
+                                <input type="password" id="password" placeholder="Masukkan kata sandi anda" class="w-full h-12 px-4 rounded-md bg-neutral-100 outline-none ring-1 ring-neutral-300">
+                            </div>
+                            <div class="flex flex-row items-center gap-2 mt-2">
+                                <div class="relative">
+                                    <input type="checkbox" id="agreement" class="invisible text-xl absolute">
+                                    <label for="agreement" class="far fa-square bg-gray-100 rounded-md text-neutral-300 left-0 grid place-items-center"></label>
+                                </div>
+                                <label for="agreement" class="text-sm">Saya setuju</label>
+                            </div>
+                            <a href="#dashboard" class="h-12 text-white bg-teal-base transition hover:opacity-90 rounded-md mt-4 grid place-items-center redirect">Daftar</a>
+                        </form>
+                        <div class="text-center text-sm mt-6"><span>Sudah punya akun? </span><a href="#login" class="text-teal-base hover:underline redirect">Masuk</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DASHBOARD -->
+            <div class="w-full h-full hidden opacity-0 transition flex-col bg-white pages" id="dashboard">
+                <header class="flex flex-col w-full max-h-56">
+                    <nav class="min-h-16 px-6 flex flex-row items-center justify-center w-full bg-teal-base text-white relative">
+                        <a href="#" class="fas fa-bars text-lg absolute left-6"></a>
+                        <p class="font-bold text-lg tracking-widest">JIMAS</p>
+                    </nav>
+                    <section class="flex flex-col relative w-full h-full bg-neutral-300 overflow-visible z-10">
+                        <div class="absolute left-1/2 -translate-x-1/2 h-14 -bottom-7 w-[calc(100%_-_48px)] shadow-md overflow-hidden rounded-md focus:scale-105 transition">
+                            <span class="fas fa-magnifying-glass absolute w-14 h-14 grid place-items-center text-xl text-neutral-400"></span>
+                            <input type="text" class="w-full h-full bg-white outline-none pr-4 pl-14" placeholder="Apa yang akan anda telusuri hari ini?">
+                        </div>
+                        <div class="w-full h-full flex flex-row scroll-smooth snap-x overflow-x-auto -z-10" id="img-scroller-dashboard">
+                            <img src="./assets/photos/img-slider0.png" alt="" class="dashboard-img-scrolls shrink-0 w-full h-full object-top object-cover backdrop-brightness-50">
+                            <img src="./assets/photos/img-slider1.png" alt="" class="dashboard-img-scrolls shrink-0 w-full h-full object-top object-cover backdrop-brightness-50">
+                            <img src="./assets/photos/img-slider2.png" alt="" class="dashboard-img-scrolls shrink-0 w-full h-full object-bottom object-cover backdrop-brightness-50">
+                            <img src="./assets/photos/img-slider0.png" alt="" class="dashboard-img-scrolls shrink-0 w-full h-full object-top object-cover backdrop-brightness-50">
+                            <img src="./assets/photos/img-slider1.png" alt="" class="dashboard-img-scrolls shrink-0 w-full h-full object-top object-cover backdrop-brightness-50">
+                            <img src="./assets/photos/img-slider2.png" alt="" class="dashboard-img-scrolls shrink-0 w-full h-full object-bottom object-cover backdrop-brightness-50">
+                        </div>
+                    </section>
+                </header>
+                <main class="p-6 pt-12 mt-16 h-max grid grid-cols-2 gap-6 overflow-auto snap-y scroll-mt-6 text-sm">
+                    <a href="#jimpitan" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-jimpitan.png" alt="Aktivitas Jimpitan" class="object-cover object-center w-20 h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Aktivitas Jimpitan</p>
+                    </a>
+                    <a href="#permodalan" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-coin.png" alt="Permodalan UMKM" class="object-contain object-center w-20 h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Permodalan UMKM</p>
+                    </a>
+                    <a href="#galeri" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-stand.png" alt="Galeri UMKM" class="object-contain object-center w-20 h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Galeri UMKM</p>
+                    </a>
+                    <a href="#pemberdayaan" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-people.png" alt="Pemberdayaan UMKM" class="object-contain object-center w-20 h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Pemberdayaan UMKM</p>
+                    </a>
+                    <a href="#infobisnis" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-info.png" alt="Informasi Bisnis" class="object-contain object-center w-20 h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Informasi Bisnis</p>
+                    </a>
+                    <a href="#eksporimpor" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-shipping.png" alt="Layanan Ekspor-Impor" class="object-cover object-center w-max h-16 p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Layanan Ekspor Impor</p>
+                    </a>
+                    <a href="#logistik" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-logistic.png" alt="Logistik" class="object-contain object-center w-20 h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Logistik</p>
+                    </a>
+                    <a href="#konsultasi" class="flex flex-col items-center justify-center bg-teal-base h-24 rounded-xl relative shrink-0 mb-6 transition hover:opacity-80 active:scale-95 redirect">
+                        <img src="./assets/icons/dashboard-consulate.png" alt="Konsultasi" class="object-contain object-center w-max h-20 aspect-square p-2 text-white">
+                        <p class="absolute -bottom-6 text-nowrap">Konsultasi</p>
+                    </a>
+                </main>
+            </div>
+
+
+        </div>
+    </body>
+    <script>
+        const switchPage = (originPageId,targetPageId) => {
+            if(originPageId && targetPageId){
+                $(originPageId).removeClass("opacity-1")
+                $(originPageId).addClass("opacity-0")
+                setTimeout(() => {
+                    $(originPageId).removeClass("flex")
+                    $(originPageId).addClass("hidden")   
+                    $(targetPageId).removeClass("hidden")
+                    $(targetPageId).addClass("flex")          
+                    setTimeout(() => {
+                        $(targetPageId).removeClass("opacity-0")
+                        $(targetPageId).addClass("opacity-1")
+                    }, 250);      
+                },250)
+            }
+        } 
+
+        const featureRoutes = () => {               
+            $(document).ready(() => {
+                const hashtag = window.location.hash
+                if(hashtag){
+                    setTimeout(() => {
+                        switchPage(".pages",hashtag)
+                    },150)
+                }
+                else{
+                    $("#loader").removeClass("hidden")
+                    $("#loader").addClass("flex")          
+                    setTimeout(() => {
+                        $("#loader").removeClass("opacity-0")                    
+                        $("#loader").addClass("opacity-1")
+                    }, 500);      
+                    
+                    setTimeout(() => {
+                        switchPage("#loader","#login")
+                    },2000)
+                }
+            })
+
+            const routes = () => {
+                const callback = (hashtag) => {
+                    setTimeout(() => {
+                        switchPage(".pages",hashtag)
+                    },150)
+                }
+                setTimeout(() => {
+                    const hashtag = window.location.hash
+                    callback(hashtag)
+                },150)
+            }   
+
+            $(".redirect").on("click",() => {
+                routes()
+            })
+
+            $(window).on("popstate", () => {
+                routes()
+            })
+        }
+
+        featureRoutes()
+    </script>
+    <script>
+        $(document).ready(() => {
+            if($("#dashboard").hasClass("flex")){
+                const container = document.getElementById("img-scroller-dashboard")
+                const items = document.querySelectorAll(".dashboard-img-scrolls")
+                let currentIndex = 0
+                let scrollDirection = "right"
+                setInterval(() => {
+                    if (scrollDirection === 'right') {
+                        currentIndex++;
+                        if (currentIndex >= items.length) {
+                            scrollDirection = 'left';
+                            currentIndex = items.length - 1;
+                        }
+                    } else {
+                        currentIndex--;
+                        if (currentIndex < 0) {
+                            scrollDirection = 'right';
+                            currentIndex = 0;
+                        }
+                    }
+
+                    container.scrollTo({
+                        left: items[currentIndex].offsetLeft,
+                        behavior: 'smooth'
+                    }); 
+                },10000)
+            }
+        })
+    </script>
+</html>
