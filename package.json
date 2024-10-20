@@ -1,3 +1,3 @@
 { "dependencies": { "tailwindcss": "^3.4.14" }, "scripts": {
-    "css" : "npx tailwindcss -i ./tailwind.css -o ./styles.css --watch --minify"
+    "css" : "npx tailwindcss -i ./tailwind.css -o ./sources/styles.css --watch --minify"
 } }

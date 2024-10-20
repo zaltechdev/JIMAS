@@ -1,0 +1,17 @@
+
+*{
+    font-family: "poppins", sans-serif;
+    outline: none;
+    image-rendering: optimizeQuality;
+    text-rendering: optimizeLegibility;
+    box-sizing:border-box !important;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+.fa{
+    width:100% !important;
+    height:100% !important;
+    display:grid !important;
+    place-items: center !important;
+}
